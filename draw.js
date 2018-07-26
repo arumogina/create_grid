@@ -6,7 +6,6 @@ $(function(){
     var ah = Number($("#height").val());
     $("#canvas").attr("width",aw%w == 0 ? aw : aw + w)
     $("#canvas").attr("height",ah%h == 0 ? ah : ah + h)
-    alert(Math.ceil(ah/h));
     var ctx = $("#canvas")[0].getContext("2d");
     ctx.strokeStyle = "black";
     for(var i = 0; i < Math.ceil(ah/h);i++){
