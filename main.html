@@ -1,0 +1,25 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.js"
+    integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous">
+  </script>
+  <script src="draw.js"></script>
+</head>
+<body>
+<p>グリッド画像を作成してくれるよ。commonの数値は直接数字を入力したときだけ反映するよ。</p>
+<p>作成した画像は右クリックで保存しよう</p>
+<p>マス目一つのサイズ(px)</p>
+width:<input type="number" id ="grid_width" style="margin-right:30px;width:100px;" value="30">
+height:<input type="number" id ="grid_height" style="margin-right:30px;width:100px;" value="30">
+common:<input type="number" id ="grid_wh" style="width:100px;" value="30">
+<br/>
+<p>全体サイズ(px)</p>
+width:<input type="number" id ="width" style="margin-right:30px;width:100px;" value="2000">
+height:<input type="number" id ="height" style="margin-right:30px;width:100px;" value="2000">
+common:<input type="number" id ="wh" style="width:100px;" value="2000">
+<button type="button" id="create_grid_btn" style="margin-left:30px;">グリッド作成</button>
+<div style="margin-top:30px;">
+  <canvas id="canvas"></canvas>
+</div>
+</body>
+</html>
