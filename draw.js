@@ -14,19 +14,9 @@ $(function(){
     var ctx = $("#canvas")[0].getContext("2d");
     ctx.strokeStyle = "black";
     for(var i = 0; i < Math.ceil(ah/h);i++){
-      if(i>1){
-        ctx.fillText(String(i+1),0,char_size+h*i-h);
-      }else if (i<=1) {
-        ctx.fillText(String(i+1),0,char_size+h*i);
-      }
+      ctx.fillText(String(i+1),0,char_size+h*i);
       for(var j = 0; j < Math.ceil(aw/w);j++){
-        if(i==0){
-          if(j>1){
-            ctx.fillText(String(j+1),char_size+w*j-w,10);
-          }else if (j<=1) {
-            ctx.fillText(String(j+1),char_size+w*j,10);
-          }
-        }
+        if(i==0) ctx.fillText(String(j+1),char_size+w*j,10);
         ctx.strokeRect(char_size+(j*w),char_size+(i*h),w,h);
       }
     }
