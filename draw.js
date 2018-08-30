@@ -7,16 +7,19 @@ $(function(){
     var cw = aw%w == 0 ? aw : aw + w
     var ch = ah%h == 0 ? ah : ah + h
     var char_size = 20;
+    var step = Number($("#step").val());
+    var step_color = "rgb(200, 0, 0)"; //red
     cw += char_size;
     ch += char_size;
     $("#canvas").attr("width",cw)
     $("#canvas").attr("height",ch)
     var ctx = $("#canvas")[0].getContext("2d");
-    ctx.strokeStyle = "black";
+    ctx.font = "10px fantasy";
     for(var i = 0; i < Math.ceil(ah/h);i++){
       ctx.fillText(String(i+1),0,char_size+h*i);
       for(var j = 0; j < Math.ceil(aw/w);j++){
         if(i==0) ctx.fillText(String(j+1),char_size+w*j,10);
+        ctx.strokeStyle = (i%step == 0 || j%step == 0) ? step_color : "black";
         ctx.strokeRect(char_size+(j*w),char_size+(i*h),w,h);
       }
     }
